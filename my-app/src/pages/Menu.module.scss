@@ -1,0 +1,26 @@
+@import "../assets/sass/mixins.scss";
+
+.menuPage {
+  display: flex;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  justify-content: center;
+  height: 100vh; /* Ensure full height of the viewport */
+  width: 100%;
+  flex-direction: column;
+  background-color: $color-primary;
+}
+
+.coffeeList {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+.menuHeader {
+  top: 10%;
+  font-size: 42px;
+  margin-bottom: 1em;
+}

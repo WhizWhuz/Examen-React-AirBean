@@ -1,0 +1,32 @@
+@import "../sass/styles.scss";
+@import "../../pages/Menu.module.scss";
+
+.button-big {
+  @include button-big;
+  position: absolute;
+}
+
+.button-small {
+  @include button-small;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-menu {
+  @include button-small;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1%;
+  left: 5%;
+}
+
+button {
+  all: unset; /* This resets all the default styles, but be cautious as it removes everything */
+}
