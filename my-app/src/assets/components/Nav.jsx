@@ -3,11 +3,20 @@ import styles from "../components/Nav.module.scss";
 import Button from "./Button";
 import { useState } from "react";
 
-function Nav({ isOpen, setIsOpen }) {
+function Nav({ isOpen, setIsOpen, hidden }) {
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains(styles.navOverlay)) {
+      setIsOpen(false);
+    }
+  };
+
   return (
     <>
       {isOpen && (
-        <div className={styles.navMenu}>
+        <div
+          className={`${styles.navMenu} ${!isOpen ? styles.hidden : ""}`}
+          onClick={handleOutsideClick}
+        >
           <>
             <Button type="menu" onClick={() => setIsOpen((is) => !is)}>
               &times;

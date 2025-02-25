@@ -16,6 +16,7 @@
   font-size: $font-size-xl;
   z-index: 100;
   position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 
   & ul {
     display: flex;
@@ -32,4 +33,10 @@
     text-decoration: none;
     color: $color-white;
   }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(-50px);
+  pointer-events: none; // Prevents interaction when hidden
 }
