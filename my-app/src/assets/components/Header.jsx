@@ -1,49 +1,46 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import navicon from "../svg/hamburger.svg";
 import carticon from "../svg/cart.svg";
 import styles from "./Header.module.scss";
-import Cart from "../../pages/Cart";
 import Button from "./Button";
 
-function HeaderBG() {
+function Header({ setIsOpen, hidden }) {
+  // ✅ Now always receives props
+  console.log("Header props:", { setIsOpen, hidden }); // ✅ Debugging log
+
   const navigate = useNavigate();
-  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handleNavClick = () => {
-    navigate("/nav");
+    if (typeof setIsOpen === "function") {
+      // ✅ Prevent calling undefined function
+      setIsOpen(true);
+    } else {
+      console.error("🚨 setIsOpen is undefined in Header!");
+    }
   };
 
   const handleCartClick = () => {
     navigate("/cart");
-    setIsCartOpen(true);
   };
 
   return (
-    <div className={styles.headerContainer}>
+    <div
+      className={styles.headerContainer}
+      style={{ display: hidden ? "none" : "flex" }}
+    >
       <section className={styles.buttonsContainer}>
-        {/* Nav Button */}
-        <Button onClick={handleNavClick} type={"small"}>
-          <img src={navicon} alt="Cart Icon" />
+        {/* ✅ Button opens the Nav menu */}
+        <Button onClick={handleNavClick} type="smallWhite">
+          <img src={navicon} alt="Nav Icon" />
         </Button>
-        <Button onClick={handleCartClick} type={"small"}>
+
+        {/* ✅ Button navigates to cart */}
+        <Button onClick={handleCartClick} type="smallBlack">
           <img src={carticon} alt="Cart Icon" />
         </Button>
       </section>
-
-      {isCartOpen && <Cart setIsOpen={setIsCartOpen} />}
     </div>
   );
 }
 
-export default HeaderBG;
-
-// <button onClick={handleNavClick} className={styles.navLink}>
-//   <img src={navicon} alt="Nav Icon" />
-// </button>;
-// {
-//   /* Cart Button */
-// }
-// <button onClick={handleCartClick} className={styles.cartLink}>
-//   <img src={carticon} alt="Cart Icon" />
-// </button>;
+export default Header;

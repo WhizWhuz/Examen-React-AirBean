@@ -11,7 +11,7 @@ function CoffeeItem({ item }) {
           <p className={styles.cofDesc}>{item?.desc}</p>
         </span>
       </div>
-      <h2 className={styles.cofPrice}>{item?.price}</h2>
+      <h2 className={styles.cofPrice}>{item?.price}kr</h2>
     </span>
   );
 }

@@ -14,15 +14,21 @@ function Nav({ isOpen, setIsOpen }) {
             </Button>
             <ul>
               <li>
-                <NavLink to="/MenuPage">Menu</NavLink>
+                <NavLink onClick={() => setIsOpen((is) => !is)} to="/MenuPage">
+                  Menu
+                </NavLink>
               </li>
               <div className={styles.line}></div>
               <li>
-                <NavLink to="/About">Vårt kaffe</NavLink>
+                <NavLink onClick={() => setIsOpen((is) => !is)} to="/About">
+                  Vårt kaffe
+                </NavLink>
               </li>
               <div className={styles.line}></div>
               <li>
-                <NavLink to="/status">Orderstatus</NavLink>
+                <NavLink onClick={() => setIsOpen((is) => !is)} to="/status">
+                  Orderstatus
+                </NavLink>
               </li>
               <div className={styles.line}></div>
             </ul>

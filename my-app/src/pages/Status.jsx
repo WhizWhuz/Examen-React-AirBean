@@ -6,8 +6,15 @@ import Nav from "../assets/components/Nav";
 export default function Status() {
   return (
     <div>
-      Status
       <Nav />
+      <h1>STATUS</h1>
+      <h1>STATUS</h1>
+      <h1>STATUS</h1>
+      <h1>STATUS</h1>
+      <h1>STATUS</h1>
+      <h1>STATUS</h1>
+      <h1>STATUS</h1>
+      <h1>STATUS</h1>
     </div>
   );
 }

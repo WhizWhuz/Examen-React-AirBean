@@ -15,16 +15,42 @@
   align-items: center;
 }
 
+.button-smallWhite {
+  @include button-small;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.button-smallBlack {
+  @include button-small;
+  height: 3.75rem;
+  width: 3.75rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
 .button-menu {
   @include button-small;
-  width: 2em;
-  height: 2em;
+  height: 3rem;
+  width: 3rem;
+  aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 1%;
-  left: 5%;
+  top: 2.2%;
+  left: 4%;
+  background-color: white;
+  color: black;
+  font-size: 62px;
+  font-weight: 100;
 }
 
 button {

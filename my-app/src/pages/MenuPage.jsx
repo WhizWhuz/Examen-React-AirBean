@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "../pages/Menu.module.scss";
 import CoffeeItem from "../assets/components/CoffeeItem";
 import Nav from "../assets/components/Nav";
-import HeaderBG from "../assets/components/Header";
+import Header from "../assets/components/Header";
 
 function MenuPage() {
   const [menu, setMenu] = useState([]);
@@ -30,7 +30,7 @@ function MenuPage() {
 
   return (
     <>
-      <HeaderBG />
+      <Nav />
       <div className={styles.menuPage}>
         <h1 className={styles.menuHeader}>Meny</h1>
         <div className={styles.coffeeList}>
