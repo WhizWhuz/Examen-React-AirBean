@@ -4,7 +4,7 @@ import carticon from "../svg/cart.svg";
 import styles from "./Header.module.scss";
 import Button from "./Button";
 
-function Header({ setIsOpen, hidden }) {
+function Header({ setIsOpen, hidden, setCartIsOpen }) {
   // ✅ Now always receives props
   console.log("Header props:", { setIsOpen, hidden }); // ✅ Debugging log
 
@@ -20,7 +20,12 @@ function Header({ setIsOpen, hidden }) {
   };
 
   const handleCartClick = () => {
-    navigate("/cart");
+    if (typeof setCartIsOpen === "function") {
+      console.log("Cart button clicked! Updating cartIsOpen...");
+      setCartIsOpen(true);
+    } else {
+      console.error("🚨 setCartIsOpen is undefined in Header!");
+    }
   };
 
   return (

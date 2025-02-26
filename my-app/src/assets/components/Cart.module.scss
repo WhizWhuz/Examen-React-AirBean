@@ -1,0 +1,31 @@
+@import "../sass/styles.scss";
+
+.cartPage {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.521);
+  z-index: 99;
+  position: absolute;
+}
+
+.cartModal {
+  width: 90vw;
+  height: 85vh;
+  background-color: $color-white;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  border-radius: 0.2em;
+}
+
+.cartModal::before {
+  content: "";
+  position: absolute;
+  top: -15px; // Adjust to move arrow up/down
+  right: 12px; // Adjust to align with cart icon
+  width: 30px;
+  height: 15px;
+  background: white;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.2); // Optional shadow for better visibility
+}
