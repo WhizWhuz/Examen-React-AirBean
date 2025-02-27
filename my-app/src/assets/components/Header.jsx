@@ -5,28 +5,22 @@ import styles from "./Header.module.scss";
 import Button from "./Button";
 
 function Header({ setIsOpen, hidden, setCartIsOpen }) {
-  // ✅ Now always receives props
-  console.log("Header props:", { setIsOpen, hidden }); // ✅ Debugging log
+	// ✅ Now always receives props
 
-  const navigate = useNavigate();
+	const navigate = useNavigate();
 
-  const handleNavClick = () => {
-    if (typeof setIsOpen === "function") {
-      // ✅ Prevent calling undefined function
-      setIsOpen(true);
-    } else {
-      console.error("🚨 setIsOpen is undefined in Header!");
-    }
-  };
+	const handleNavClick = () => {
+		if (typeof setIsOpen === "function") {
+			// ✅ Prevent calling undefined function
+			setIsOpen(true);
+		}
+	};
 
-  const handleCartClick = () => {
-    if (typeof setCartIsOpen === "function") {
-      console.log("Cart button clicked! Updating cartIsOpen...");
-      setCartIsOpen(true);
-    } else {
-      console.error("🚨 setCartIsOpen is undefined in Header!");
-    }
-  };
+	const handleCartClick = () => {
+		if (typeof setCartIsOpen === "function") {
+			setCartIsOpen(true);
+		}
+	};
 
   return (
     <div
