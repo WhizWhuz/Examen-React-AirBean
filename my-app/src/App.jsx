@@ -30,7 +30,9 @@ function App() {
 					"https://airbean-9pcyw.ondigitalocean.app/api/beans"
 				);
 				if (!response.ok) {
-					throw new Error("Something went wrong! (HTTP error)");
+					throw new Error(
+						"Something went wrong, can't show the menu! (HTTP error)"
+					);
 				}
 				const menuData = await response.json();
 				//console.log(menuData.menu);
@@ -61,7 +63,13 @@ function App() {
 					<Route path="/About" element={<About />} />
 					<Route
 						path="/MenuPage"
-						element={<MenuPage menu={menu} setCartItem={setCartItem} />}
+						element={
+							<MenuPage
+								menu={menu}
+								setCartItem={setCartItem}
+								cartItem={cartItem}
+							/>
+						}
 					/>
 					<Route path="/Status" element={<Status />} />
 					<Route path="*" element={<NotFound />} />
