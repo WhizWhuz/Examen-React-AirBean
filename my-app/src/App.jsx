@@ -44,69 +44,30 @@ function App() {
 	}, []);
 
 	return (
-		<Router>
-			<AppContent
-				isOpen={isOpen}
-				setIsOpen={setIsOpen}
-				cartIsOpen={cartIsOpen}
-				setCartIsOpen={setCartIsOpen}
-				menu={menu}
-				cartItem={cartItem}
-				setCartItem={setCartItem}
-			/>
-		</Router>
-	);
-}
-//spara addtocart items i en array
-function addToCart(item) {
-	setCartItem((prevCart) => [...prevCart, item]);
-}
-
-function AppContent({
-	isOpen,
-	setIsOpen,
-	cartIsOpen,
-	setCartIsOpen,
-	menu,
-	cartItem,
-	setCartItem,
-}) {
-	const location = useLocation();
-
-	// console.log("AppContent props:", { isOpen, setIsOpen }); // ✅ Debugging
-
-	// ✅ Pages where Header should NOT appear
-	const hideHeaderOnRoutes = ["/cart", "/status", "/"];
-
-	return (
 		<>
-			{/* ✅ Always render Header, but hide it via CSS instead of conditionally */}
-			<Header
-				setIsOpen={setIsOpen}
-				hidden={hideHeaderOnRoutes.includes(location.pathname)}
-				setCartIsOpen={setCartIsOpen} // ✅ Pass it here!}
-			/>
+			<Router>
+				<Header setIsOpen={setIsOpen} setCartIsOpen={setCartIsOpen} />
 
-			<Nav isOpen={isOpen} setIsOpen={setIsOpen} />
-			<Cart
-				cartIsOpen={cartIsOpen}
-				setCartIsOpen={setCartIsOpen}
-				cartItem={cartItem}
-				setCartItem={setCartItem}
-			/>
-
-			<Routes>
-				<Route path="/" element={<Landing />} />
-				<Route path="/About" element={<About />} />
-				<Route
-					path="/MenuPage"
-					element={<MenuPage menu={menu} setCartItem={setCartItem} />}
+				<Nav isOpen={isOpen} setIsOpen={setIsOpen} />
+				<Cart
+					cartIsOpen={cartIsOpen}
+					setCartIsOpen={setCartIsOpen}
+					cartItem={cartItem}
+					setCartItem={setCartItem}
 				/>
-				<Route path="/Status" element={<Status />} />
-				<Route path="*" element={<NotFound />} />
-			</Routes>
+
+				<Routes>
+					<Route path="/" element={<Landing />} />
+					<Route path="/About" element={<About />} />
+					<Route
+						path="/MenuPage"
+						element={<MenuPage menu={menu} setCartItem={setCartItem} />}
+					/>
+					<Route path="/Status" element={<Status />} />
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+			</Router>
 		</>
 	);
 }
-
 export default App;
