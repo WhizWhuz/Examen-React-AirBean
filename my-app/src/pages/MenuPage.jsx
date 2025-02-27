@@ -3,13 +3,17 @@ import styles from "../pages/Menu.module.scss";
 import CoffeeItem from "../assets/components/CoffeeItem";
 import Nav from "../assets/components/Nav";
 
-function MenuPage({ menu, setCartItem }) {
+function MenuPage({ menu, setCartItem, cartItem }) {
 	function addToCart(item) {
-		setCartItem((prevCart) => {
-			const updatedCart = [...prevCart, item.title, item.price];
-			console.log(updatedCart);
-			return updatedCart;
-		});
+		setCartItem((prevCart) => [
+			...prevCart,
+			{ title: item.title, price: item.price },
+		]);
+
+		console.log("Updated cart:", [
+			...cartItem,
+			{ title: item.title, price: item.price },
+		]);
 	}
 
 	return (
