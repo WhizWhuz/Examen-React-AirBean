@@ -35,14 +35,12 @@ function App() {
 function AppContent({ isOpen, setIsOpen, cartIsOpen, setCartIsOpen }) {
   const location = useLocation();
 
-  console.log("AppContent props:", { isOpen, setIsOpen }); // ✅ Debugging
+  console.log("AppContent props:", { isOpen, setIsOpen });
 
-  // ✅ Pages where Header should NOT appear
   const hideHeaderOnRoutes = ["/cart", "/status", "/"];
 
   return (
     <>
-      {/* ✅ Always render Header, but hide it via CSS instead of conditionally */}
       <Header
         setIsOpen={setIsOpen}
         hidden={hideHeaderOnRoutes.includes(location.pathname)}
@@ -56,7 +54,7 @@ function AppContent({ isOpen, setIsOpen, cartIsOpen, setCartIsOpen }) {
         <Route path="/" element={<Landing />} />
         <Route path="/About" element={<About />} />
         <Route path="/MenuPage" element={<MenuPage />} />
-        <Route path="/Status" element={<Status />} />
+        <Route path="/status" element={<Status />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

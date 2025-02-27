@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styles from "../pages/Menu.module.scss";
 import CoffeeItem from "../assets/components/CoffeeItem";
 import Nav from "../assets/components/Nav";
-import Header from "../assets/components/Header";
 
 function MenuPage() {
   const [menu, setMenu] = useState([]);

@@ -34,12 +34,10 @@ function Header({ setIsOpen, hidden, setCartIsOpen }) {
       style={{ display: hidden ? "none" : "flex" }}
     >
       <section className={styles.buttonsContainer}>
-        {/* ✅ Button opens the Nav menu */}
         <Button onClick={handleNavClick} type="smallWhite">
           <img src={navicon} alt="Nav Icon" />
         </Button>
 
-        {/* ✅ Button navigates to cart */}
         <Button onClick={handleCartClick} type="smallBlack">
           <img src={carticon} alt="Cart Icon" />
         </Button>
