@@ -1,13 +1,8 @@
-@import "../assets/sass/mixins.scss";
+@import "../assets/sass/styles.scss";
 
 .menuPage {
-  display: flex;
-  align-items: center;
-  color: rgb(0, 0, 0);
-  justify-content: center;
   height: 100vh; /* Ensure full height of the viewport */
   width: 100%;
-  flex-direction: column;
   background-color: $color-primary;
 }
 
@@ -20,9 +15,25 @@
   margin-top: 3rem;
 }
 
-.menuHeader {
-  top: 14%;
-  font-size: 42px;
-  margin-bottom: 2rem;
-  position: absolute;
+.menuContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.cartitemsLength {
+  background-color: $color-orange;
+  width: 1.38rem;
+  height: 1.38rem;
+  padding: 0.5em;
+  border-radius: 10em;
+  font-family: $font-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-sm;
+  color: $color-white;
+  font-weight: 500;
 }

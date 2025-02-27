@@ -1,10 +1,5 @@
 import "./App.css";
-import {
-	BrowserRouter as Router,
-	Routes,
-	Route,
-	useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import Landing from "./pages/Landing";
@@ -17,10 +12,10 @@ import Status from "./pages/Status";
 import NotFound from "./pages/NotFound";
 
 function App() {
-	const [isOpen, setIsOpen] = useState(false);
-	const [cartIsOpen, setCartIsOpen] = useState(false);
-	const [menu, setMenu] = useState([]);
-	const [cartItem, setCartItem] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [cartIsOpen, setCartIsOpen] = useState(false);
+  const [menu, setMenu] = useState([]);
+  const [cartItem, setCartItem] = useState([]);
 
 	//Fetch the coffee menu
 	useEffect(() => {
@@ -45,18 +40,22 @@ function App() {
 		fetchMenu();
 	}, []);
 
-	return (
-		<>
-			<Router>
-				<Header setIsOpen={setIsOpen} setCartIsOpen={setCartIsOpen} />
+  return (
+    <>
+      <Router>
+        <Header
+          setIsOpen={setIsOpen}
+          setCartIsOpen={setCartIsOpen}
+          cartItem={cartItem}
+        />
 
-				<Nav isOpen={isOpen} setIsOpen={setIsOpen} />
-				<Cart
-					cartIsOpen={cartIsOpen}
-					setCartIsOpen={setCartIsOpen}
-					cartItem={cartItem}
-					setCartItem={setCartItem}
-				/>
+        <Nav isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Cart
+          cartIsOpen={cartIsOpen}
+          setCartIsOpen={setCartIsOpen}
+          cartItem={cartItem}
+          setCartItem={setCartItem}
+        />
 
 				<Routes>
 					<Route path="/" element={<Landing />} />
