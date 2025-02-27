@@ -7,7 +7,7 @@ function Cart({ cartIsOpen, setCartIsOpen, cartItem, setCartItem }) {
 	async function postOrder(orderDetails) {
 		try {
 			const response = await fetch(
-				"https://airbean-9pcyw.ondigitalocean.app/api/beans/order",
+				"https://airbean-9pcyw.ondigitalocean.app/api/order",
 				{
 					method: "POST",
 					headers: {
