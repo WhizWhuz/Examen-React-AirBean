@@ -24,7 +24,7 @@ function Nav({ isOpen, setIsOpen, hidden }) {
             <ul>
               <li>
                 <NavLink onClick={() => setIsOpen((is) => !is)} to="/MenuPage">
-                  Menu
+                  Meny
                 </NavLink>
               </li>
               <div className={styles.line}></div>

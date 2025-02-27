@@ -22,24 +22,22 @@ function Header({ setIsOpen, hidden, setCartIsOpen }) {
 		}
 	};
 
-	return (
-		<div
-			className={styles.headerContainer}
-			style={{ display: hidden ? "none" : "flex" }}
-		>
-			<section className={styles.buttonsContainer}>
-				{/* ✅ Button opens the Nav menu */}
-				<Button onClick={handleNavClick} type="smallWhite">
-					<img src={navicon} alt="Nav Icon" />
-				</Button>
+  return (
+    <div
+      className={styles.headerContainer}
+      style={{ display: hidden ? "none" : "flex" }}
+    >
+      <section className={styles.buttonsContainer}>
+        <Button onClick={handleNavClick} type="smallWhite">
+          <img src={navicon} alt="Nav Icon" />
+        </Button>
 
-				{/* ✅ Button navigates to cart */}
-				<Button onClick={handleCartClick} type="smallBlack">
-					<img src={carticon} alt="Cart Icon" />
-				</Button>
-			</section>
-		</div>
-	);
+        <Button onClick={handleCartClick} type="smallBlack">
+          <img src={carticon} alt="Cart Icon" />
+        </Button>
+      </section>
+    </div>
+  );
 }
 
 export default Header;

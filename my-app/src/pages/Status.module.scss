@@ -1,1 +1,41 @@
 @import "../assets/sass/styles.scss";
+
+.statusPage {
+  background-color: #e5674e;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  & span {
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+  }
+}
+
+.ontheway {
+  font-size: $font-size-xxl;
+  font-family: $font-primary;
+  font-weight: 900;
+  text-align: center;
+  width: 250px;
+  font-smooth: always; /* Standard property */
+  -webkit-font-smoothing: antialiased; /* For WebKit browsers */
+  -moz-osx-font-smoothing: grayscale; /* For macOS */
+}
+
+.minutes {
+  text-align: center;
+  font-family: $font-secondary;
+  font-weight: $font-weight-secondary;
+  font-size: $font-size-md;
+}
+
+.ordernumber {
+  font-family: $font-secondary;
+  font-weight: $font-weight-secondary;
+}
