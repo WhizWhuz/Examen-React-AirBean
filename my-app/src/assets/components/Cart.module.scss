@@ -16,6 +16,10 @@
   top: 10%;
   right: 5%;
   border-radius: 0.2em;
+
+  li {
+    list-style: none;
+  }
 }
 
 .cartModal::before {

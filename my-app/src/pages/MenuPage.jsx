@@ -4,8 +4,17 @@ import Nav from "../assets/components/Nav";
 import Footer from "../assets/svg/footer_bg.svg";
 
 function MenuPage({ menu, setCartItem, cartItem }) {
-  function addToCart(item) {
-    const updatedCart = [...cartItem, { title: item.title, price: item.price }]; // ✅ Create a new version of the cart
+	function addToCart(item) {
+		setCartItem((prevCart) => [
+			...prevCart,
+			{ title: item.title, price: item.price },
+		]);
+
+		console.log("Updated cart:", [
+			...cartItem,
+			{ title: item.title, price: item.price },
+		]);
+	}
 
     setCartItem(updatedCart); // ✅ Update state
     console.log("Updated cart:", updatedCart); // ✅ Logs the correct new cart

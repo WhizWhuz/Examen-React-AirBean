@@ -13,9 +13,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  & img {
-  }
 }
 
 .button-smallWhite {
@@ -67,6 +64,15 @@
   @include button-big;
   background-color: white;
   color: black;
+  font-size: $font-size-l;
+  font-weight: $font-weight-primary;
+  padding: 0.7rem 3rem;
+}
+
+.button-order{
+  @include button-big;
+  background-color: $color-brown;
+  color: white;
   font-size: $font-size-l;
   font-weight: $font-weight-primary;
   padding: 0.7rem 3rem;
