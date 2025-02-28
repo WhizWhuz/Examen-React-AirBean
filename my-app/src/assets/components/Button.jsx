@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../components/Button.module.scss";
 
 function Button({ onClick, children, type }) {

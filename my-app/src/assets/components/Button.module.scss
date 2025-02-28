@@ -69,15 +69,16 @@
   padding: 0.7rem 3rem;
 }
 
-.button-order{
+.button-order {
   @include button-big;
   background-color: $color-brown;
   color: white;
   font-size: $font-size-l;
   font-weight: $font-weight-primary;
   padding: 0.7rem 3rem;
+  text-align: center;
 }
 
 button {
-  all: unset; /* This resets all the default styles, but be cautious as it removes everything */
+  all: unset;
 }

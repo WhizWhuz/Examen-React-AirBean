@@ -1,4 +1,3 @@
-import Button from "../assets/components/Button";
 import Nav from "../assets/components/Nav";
 import styles from "./About.module.scss";
 

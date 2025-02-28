@@ -8,6 +8,7 @@
   body {
     padding: 0;
     margin: 0;
+    background-color: $color-primary;
   }
   * {
     box-sizing: border-box;
@@ -26,19 +27,19 @@
   }
 }
 
-/* LandingPage.module.scss */
 .landingPage {
   display: flex;
   align-items: center;
   color: white;
   justify-content: center;
-  height: 100vh; /* Ensure full height of the viewport */
+  height: 100vh;
   width: 100%;
   flex-direction: column;
-  /* Alternatively, for background image: */
   background-color: $color-green;
-  background-size: cover; /* Optional for images */
-  background-position: center center; /* Optional for image positioning */
+  background-size: cover;
+  background-position: center center;
+  transition: opacity 0.5s ease-in-out;
+
 
   h1 {
     font-family: $font-welcomepage;
@@ -53,6 +54,10 @@
     font-size: 0.6rem;
     letter-spacing: 0.3rem;
   }
+}
+
+.fadeOut {
+  opacity: 0;
 }
 
 .logoArt {

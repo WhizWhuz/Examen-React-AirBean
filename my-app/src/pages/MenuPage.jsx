@@ -1,6 +1,5 @@
 import styles from "../pages/Menu.module.scss";
 import CoffeeItem from "../assets/components/CoffeeItem";
-import Nav from "../assets/components/Nav";
 import Footer from "../assets/svg/footer_bg.svg";
 
 function MenuPage({ menu, setCartItem, cartItem }) {

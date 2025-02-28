@@ -7,6 +7,9 @@
   color: black;
   flex-direction: row;
   justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
 }
 
 .cofPrice {
@@ -17,4 +20,8 @@
   font-size: $font-size-xs;
   font-family: $font-secondary;
   margin-bottom: 1em;
+}
+
+.cofTitle {
+  font-family: $font-primary;
 }

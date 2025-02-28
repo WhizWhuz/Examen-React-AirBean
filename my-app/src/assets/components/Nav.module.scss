@@ -40,5 +40,5 @@
 .hidden {
   opacity: 0;
   transform: translateY(-50px);
-  pointer-events: none; // Prevents interaction when hidden
+  pointer-events: none;
 }

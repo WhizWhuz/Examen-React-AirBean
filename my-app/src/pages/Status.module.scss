@@ -23,9 +23,9 @@
   font-weight: 900;
   text-align: center;
   width: 250px;
-  font-smooth: always; /* Standard property */
-  -webkit-font-smoothing: antialiased; /* For WebKit browsers */
-  -moz-osx-font-smoothing: grayscale; /* For macOS */
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .minutes {

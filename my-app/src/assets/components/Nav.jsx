@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "../components/Nav.module.scss";
 import Button from "./Button";
-import { useState } from "react";
 
 function Nav({ isOpen, setIsOpen, hidden }) {
   const handleOutsideClick = (e) => {

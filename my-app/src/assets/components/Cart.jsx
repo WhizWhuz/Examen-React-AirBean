@@ -4,6 +4,7 @@ import styles from "./Cart.module.scss";
 import CartItem from "./CartItem";
 
 function Cart({ cartIsOpen, setCartIsOpen, cartItem, setCartItem }) {
+
 	// // console.log("Cart props:", { cartIsOpen, setCartIsOpen }); // Debugging
 	const navigate = useNavigate();
 
@@ -40,7 +41,7 @@ function Cart({ cartIsOpen, setCartIsOpen, cartItem, setCartItem }) {
 			return;
 		}
 
-		const orderResponse = await postOrder(cartItem);
+    const orderResponse = await postOrder(cartItem);
 
 		//Spara i sessionStorage
 		if (orderResponse) {
@@ -55,34 +56,42 @@ function Cart({ cartIsOpen, setCartIsOpen, cartItem, setCartItem }) {
 		}
 	}
 
-	return (
-		<>
-			{cartIsOpen && (
-				<div className={styles.cartPage}>
-					<div className={styles.cartModal}>
-						<h2 className={styles.yourOrder}>Din beställning</h2>
-						<ul>
-							{cartItem.map((item, index) => (
-								<li key={index}>
-									<CartItem key={item.id} item={item}></CartItem>
-								</li>
-							))}
-						</ul>
-						<span className={styles.bottomPart}>
-							<span className={styles.totalSeparator}>
-								<p>Total</p>
-								<p className="totalPrice">{totalPrice} kr</p>
-							</span>
-							<Button onClick={handleOrder} type={"order"}>
-								Take my money!
-							</Button>
-						</span>
-						<button onClick={() => setCartIsOpen(false)}>Close</button>
-					</div>
-				</div>
-			)}
-		</>
-	);
+  return (
+    <>
+      {cartIsOpen && (
+        <div className={styles.cartPage} onClick={() => setCartIsOpen(false)}>
+          <div className={styles.cartPointer}></div>
+          <div
+            className={styles.cartModal}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className={styles.yourOrder}>Din beställning</h2>
+            <ul>
+              {cartItem.map((item, index) => (
+                <li key={index}>
+                  <CartItem
+                    setCartItem={setCartItem}
+                    key={item.id}
+                    item={item}
+                  ></CartItem>
+                </li>
+              ))}
+            </ul>
+            <span className={styles.bottomPart}>
+              <span className={styles.totalSeparator}>
+                <p>Total</p>
+                <p className={styles.totalPrice}>{totalPrice} kr</p>
+              </span>
+              <p className={styles.description}>inkl moms + drönarleverans</p>
+              <Button onClick={handleOrder} type={"order"}>
+                Take my money!
+              </Button>
+            </span>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
 
 export default Cart;
