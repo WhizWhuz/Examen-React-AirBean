@@ -1,17 +1,12 @@
 @import "../sass/styles.scss";
 
-.coffeeItem {
+.cartItem {
   width: 100%;
   height: 30px;
-  display: flex;
   gap: 2em;
   color: black;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.cofTitle {
-  font-family: $font-primary;
 }
 
 .cofPrice {
@@ -21,9 +16,5 @@
 .cofDesc {
   font-size: $font-size-xs;
   font-family: $font-secondary;
-}
-
-.lefty {
-  display: flex;
-  gap: 1em;
+  margin-bottom: 1em;
 }

@@ -28,7 +28,7 @@ function MenuPage({ menu, setCartItem, cartItem }) {
             ))}
           </div>
         </div>
-        <img src={Footer} alt="" />
+        <img className={styles.footer} src={Footer} alt="" />
       </div>
     </>
   );
