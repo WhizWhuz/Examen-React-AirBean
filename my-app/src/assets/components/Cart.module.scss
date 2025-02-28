@@ -5,17 +5,23 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.521);
   z-index: 99;
-  position: absolute;
+  position: fixed;
 }
 
 .cartModal {
   width: 90vw;
-  height: 85vh;
   background-color: $color-white;
   position: absolute;
   top: 10%;
   right: 5%;
   border-radius: 0.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  padding: 1em;
+  overflow-y: auto; /* Adds a vertical scrollbar when content exceeds the height */
+  overflow-x: hidden; /* Optional: hides horizontal overflow if not needed */
+  max-height: 80vh;
 
   li {
     list-style: none;
@@ -32,4 +38,27 @@
   background: white;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.2); // Optional shadow for better visibility
+}
+
+.yourOrder {
+  font-size: $font-size-xl;
+  text-align: center;
+}
+
+.cofDesc {
+  font-size: $font-size-xs;
+  font-family: $font-secondary;
+}
+
+.bottomPart {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.totalSeparator {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
 }
