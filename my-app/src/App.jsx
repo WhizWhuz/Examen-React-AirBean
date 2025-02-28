@@ -12,10 +12,10 @@ import Status from "./pages/Status";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [cartIsOpen, setCartIsOpen] = useState(false);
-  const [menu, setMenu] = useState([]);
-  const [cartItem, setCartItem] = useState([]);
+	const [isOpen, setIsOpen] = useState(false);
+	const [cartIsOpen, setCartIsOpen] = useState(false);
+	const [menu, setMenu] = useState([]);
+	const [cartItem, setCartItem] = useState([]);
 
 	//Fetch the coffee menu
 	useEffect(() => {
@@ -36,26 +36,26 @@ function App() {
 				console.error("Fel vid hämtning av meny:", error);
 			}
 		}
-		// Immediately call the async function
+
 		fetchMenu();
 	}, []);
 
-  return (
-    <>
-      <Router>
-        <Header
-          setIsOpen={setIsOpen}
-          setCartIsOpen={setCartIsOpen}
-          cartItem={cartItem}
-        />
+	return (
+		<>
+			<Router>
+				<Header
+					setIsOpen={setIsOpen}
+					setCartIsOpen={setCartIsOpen}
+					cartItem={cartItem}
+				/>
 
-        <Nav isOpen={isOpen} setIsOpen={setIsOpen} />
-        <Cart
-          cartIsOpen={cartIsOpen}
-          setCartIsOpen={setCartIsOpen}
-          cartItem={cartItem}
-          setCartItem={setCartItem}
-        />
+				<Nav isOpen={isOpen} setIsOpen={setIsOpen} />
+				<Cart
+					cartIsOpen={cartIsOpen}
+					setCartIsOpen={setCartIsOpen}
+					cartItem={cartItem}
+					setCartItem={setCartItem}
+				/>
 
 				<Routes>
 					<Route path="/" element={<Landing />} />
