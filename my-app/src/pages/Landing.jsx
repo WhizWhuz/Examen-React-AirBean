@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Landing() {
-  const navigate = useNavigate();
+
+ const navigate = useNavigate();
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
@@ -18,17 +19,19 @@ function Landing() {
     };
   }, [navigate]);
 
-  return (
-    <>
-      <div className={`${styles.landingPage} ${fadeOut ? styles.fadeOut : ""}`}>
-        <figure className={styles.logoArt}>
-          <img src={Logo} />
-        </figure>
-        <h1>AIR BEAN</h1>
-        <p>Dronedelivered coffee</p>
-      </div>
-    </>
-  );
+	return (
+		<>
+			<div className={`${styles.landingPage} ${fadeOut ? styles.fadeOut : ""}`}>
+				<figure className={styles.landingLeft}></figure>
+				<figure className={styles.logoArt}>
+					<img src={Logo} />
+				</figure>
+				<figure className={styles.landingRight}></figure>
+				<h1>AIR BEAN</h1>
+				<p>Dronedelivered coffee</p>
+			</div>
+		</>
+	);
 }
 
 export default Landing;
