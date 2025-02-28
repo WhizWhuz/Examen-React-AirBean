@@ -39,10 +39,24 @@
   background-color: $color-green;
   background-size: cover; /* Optional for images */
   background-position: center center; /* Optional for image positioning */
+
+  h1 {
+    font-family: $font-welcomepage;
+    font-weight: $font-welcomepage;
+    font-size: 2.6rem;
+  }
+
+  p {
+    font-family: $font-secondary;
+    font-weight: $font-weight-secondary;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    letter-spacing: 0.3rem;
+  }
 }
 
 .logoArt {
-  background: lighten($color-green, 10%);
+  background: lighten($color-green, 5%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,4 +68,22 @@
     width: 3em;
     height: 3em;
   }
+}
+
+
+.landingLeft {
+  background-image: url("../assets/svg/landing_left.svg");
+  background-repeat: no-repeat;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.landingRight {
+  background-image: url("../assets/svg/landing_right.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }

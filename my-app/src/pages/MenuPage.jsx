@@ -9,19 +9,13 @@ function MenuPage({ menu, setCartItem, cartItem }) {
 			...prevCart,
 			{ name: item.title, price: item.price },
 		]);
-
-		console.log("Updated cart:", [
-			...cartItem,
-			{ title: item.title, price: item.price },
-		]);
 	}
 
 	return (
 		<>
-			<Nav />
 			<div className={styles.menuPage}>
 				<div className={styles.menuContainer}>
-					<h1>Meny</h1>
+					<h1 className={styles.headerName}>Meny</h1>
 					<div className={styles.coffeeList}>
 						{menu.map((item) => (
 							<CoffeeItem key={item.id} item={item} addToCart={addToCart} />
