@@ -23,17 +23,7 @@
   height: 100%;
 }
 
-.cartitemsLength {
-  background-color: $color-orange;
-  width: 1.38rem;
-  height: 1.38rem;
-  padding: 0.5em;
-  border-radius: 10em;
-  font-family: $font-primary;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: $font-size-sm;
-  color: $color-white;
-  font-weight: 500;
+.footer {
+  position: absolute;
+  background-color: $color-primary;
 }
